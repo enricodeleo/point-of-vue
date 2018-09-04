@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Style -->
+  <style>
+    body {
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    }
+
+    #hello-world {
+      border: 1px solid #ececec;
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+
+  <!-- Vue CDN -->
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <!-- View -->
+  <div id="hello-world">
+    <p>I have a message for you all: </p>
+    <h2>{{ message }}</h2>
+  </div>
+
+  <!-- Logic -->
+  <script>
+    new Vue({
+      el: '#hello-world',
+      data: {
+        message: 'Hello World!',
+      },
+    })
+  </script>
+</body>
+</html>
