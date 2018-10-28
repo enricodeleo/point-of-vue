@@ -1,0 +1,19 @@
+{
+  "name": "parceljs-starter",
+  "version": "1.0.0",
+  "description": "Your first Vue project powered by Parceljs",
+  "main": "index.html",
+  "author": "Enrico Deleo <hello@enricodeleo.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.3.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "parcel-bundler": "^1.10.3",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-hot-reload-api": "^2.3.1"
+  }
+}
