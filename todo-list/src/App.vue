@@ -45,11 +45,11 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="column">
-                  <div class="card text-center add-task">
+              <div class="row add-task">
+                <div class="column text-center">
+                  <button class="button">
                     <h3 class="no-margin">Add Task</h3>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -159,8 +159,17 @@ export default {
     }
 
     .add-task {
-      padding: 20px;
       margin-top: 28px;
+      .button {
+        background: #ffffff;
+        border: 0;
+        color: $color-secondary;
+        padding: 20px;
+        width: 100%;
+        height: auto;
+        text-transform: none;
+        border-radius: 10px;
+      }
     }
   }
 </style>
