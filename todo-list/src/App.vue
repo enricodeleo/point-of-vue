@@ -16,9 +16,13 @@ export default {
 </script>
 
 <style lang="scss">
-
   @import '../node_modules/milligram/src/milligram.sass';
 
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
 
   #app-template {
     background-color: #ed68a1;
