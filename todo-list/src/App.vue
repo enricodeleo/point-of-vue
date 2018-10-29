@@ -22,32 +22,25 @@
               <div class="row">
                 <div class="column">
                   <div class="card">
-                    <div class="row">
+                    <div class="row" v-for="(task, i) in tasks" :key="i" :class="{ 'task-done': task.done }">
                       <div class="column column-20">
-                        <button class="button-check button-clear">
+                        <button class="button-check button-clear" @click="toggleTask(i)">
                           &nbsp;
                         </button>
                       </div>
                       <div class="column column-80">
-                        <h3>Buy Milk</h3>
+                        <h3 class="no-margin">{{ task.title }}</h3>
                       </div>
                     </div>
-                    <div class="row task-done">
-                      <div class="column column-20">
-                        <button class="button-check button-clear">
-                          &nbsp;
-                        </button>
-                      </div>
-                      <div class="column column-80">
-                        <h3>Buy Milk</h3>
-                      </div>
+                    <div v-if="!tasks.length">
+                      <h3 class="no-margin">No tasks, yet.</h3>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row add-task">
                 <div class="column text-center">
-                  <button class="button">
+                  <button class="button" @click="addTask()">
                     <h3 class="no-margin">Add Task</h3>
                   </button>
                 </div>
@@ -61,11 +54,37 @@
 </template>
 
 <script>
+/**
+ * New task entity
+ * @param {string} title - The title of this task
+ * @param {boolean} title - Whether the task is done or not
+ */
+function Task(title, done) {
+  this.title = title || 'New Task';
+  this.done = done || false;
+}
+
 export default {
   name: 'app',
   data () {
     return {
-      message: 'Hello World!'
+      tasks: [],
+    }
+  },
+  methods: {
+    /**
+     * Add a new task to the array of tasks
+     */
+    addTask () {
+      const newTask = new Task();
+      this.tasks.push(newTask);
+    },
+    /**
+     * Toggle the `done` status of a task
+     * @param {number} i - Index of the task
+     */
+    toggleTask (i) {
+      this.tasks[i].done = !this.tasks[i].done;
     }
   }
 }
