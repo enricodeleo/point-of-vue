@@ -29,7 +29,7 @@
                         </button>
                       </div>
                       <div class="column column-80">
-                        <h3 class="no-margin">{{ task.title }}</h3>
+                        <input type="text" class="task-input no-margin" v-model="task.title">
                       </div>
                     </div>
                     <div v-if="!tasks.length">
@@ -144,6 +144,15 @@ export default {
     border-radius: 10px;
   }
 
+  input.task-input {
+    padding: 0;
+    border: 0;
+    font-size: 2.8rem;
+    line-height: 1.3;
+    font-weight: 300;
+    color: $color-secondary;
+  }
+
   .button-check {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.20);
     width: 36px;
@@ -154,8 +163,10 @@ export default {
   }
 
   .task-done {
-    text-decoration: line-through;
-    color: #cccccc;
+    input.task-input {
+      text-decoration: line-through;
+      color: #cccccc;
+    }
     .button-check {
       box-shadow: 0 0 10px 0 inset rgba(0, 0, 0, 0.20);
       background-color: #cccccc;
