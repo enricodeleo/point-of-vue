@@ -1,7 +1,7 @@
 {
-  "name": "todo-list",
+  "name": "blog",
   "version": "1.0.0",
-  "description": "A simple todo list powered by Vue",
+  "description": "A simple blog powered by Vue",
   "main": "index.html",
   "author": "Enrico Deleo <hello@enricodeleo.com>",
   "license": "UNLICENSED",
