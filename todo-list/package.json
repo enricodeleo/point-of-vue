@@ -6,7 +6,7 @@
   "author": "Enrico Deleo <hello@enricodeleo.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "parcel watch index.html"
+    "dev": "parcel index.html"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.3.0",
