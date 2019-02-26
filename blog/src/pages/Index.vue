@@ -3,11 +3,13 @@
   <div class="container">
     <div class="row" v-for="i in Math.ceil(posts.length / 5)" style="margin-top: 25px">
       <div class="column column-20" v-for="post in posts.slice((i - 1) * 5, i * 5)">
-        <div class="card">
-          <img src="https://fakeimg.pl/300/">
-          <h5 v-html="post.title.rendered"></h5>
-          <p>{{ new Date(post.date_gmt).toLocaleString('it-IT', { year: 'numeric', month: 'numeric', day: 'numeric' }) }}</p>
-        </div>
+        <router-link :to="{ name: 'single', params: { id: post.id }}">
+          <div class="card">
+            <img src="https://fakeimg.pl/300/">
+            <h5 v-html="post.title.rendered"></h5>
+            <p>{{ new Date(post.date_gmt).toLocaleString('it-IT', { year: 'numeric', month: 'numeric', day: 'numeric' }) }}</p>
+          </div>
+        </router-link>
       </div>
     </div>
   </div>

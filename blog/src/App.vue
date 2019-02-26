@@ -4,7 +4,9 @@
     <header class="header-main">
       <div class="row">
         <div class="column text-center">
-          <h2 class="no-margin"><strong>My Blog</strong></h2>
+          <router-link :to="{ name: 'index' }">
+            <h2 class="no-margin"><strong>My Blog</strong></h2>
+          </router-link>
         </div>
       </div>
     </header>
@@ -76,6 +78,10 @@ export default {
   .header-main {
     background: white;
     padding: 1rem 0;
+  }
+
+  .header-main {
+    margin-bottom: 20px;
   }
 
 </style>
