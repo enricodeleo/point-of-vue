@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import store from './store';
 
 import IndexPage from './pages/Index';
+import ProfilePage from './pages/Profile';
 import LoginPage from './pages/Login';
 
 const router = new VueRouter({
@@ -13,6 +14,11 @@ const router = new VueRouter({
       path: '/',
       name: 'index',
       component: IndexPage,
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: ProfilePage,
     },
     {
       path: '/login',

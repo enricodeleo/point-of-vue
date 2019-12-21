@@ -1,24 +1,44 @@
 // App.vue
 <template>
   <div>
-    <header class="header-main">
-      <div class="row">
-        <div class="column text-center">
-          <router-link :to="{ name: 'index' }">
-            <h2 class="no-margin"><strong>My App</strong></h2>
+    <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <router-link :to="{ name: 'index' }" class="navbar-item">
+            <strong>My App</strong>
           </router-link>
         </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <router-link :to="{ name: 'index' }" class="navbar-item">
+              Home
+            </router-link>
+
+            <router-link :to="{ name: 'profile' }" class="navbar-item">
+              Profile
+            </router-link>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <router-link :to="{ name: 'index' }" class="button is-light">
+                  Log in
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
+    </nav>
     <div class="container">
       <!-- component matched by the route will render here -->
       <router-view></router-view>
     </div>
-    <footer class="footer-main">
-      <div class="row">
-        <div class="column text-center">
-          <p class="no-margin">&copy; Copyleft {{ new Date().toLocaleString('it-IT', { year: 'numeric' }) }} Point of Vue</p>
-        </div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>&copy; Copyleft {{ new Date().toLocaleString('it-IT', { year: 'numeric' }) }} Point of Vue</p>
       </div>
     </footer>
   </div>
@@ -31,10 +51,7 @@ export default {
 </script>
 
 <style lang="scss">
-  $color-secondary: #9c9c9c;
-
-  @import '../node_modules/milligram/src/milligram.sass';
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+  @import '../node_modules/bulma/bulma.sass';
 
   html,
   body {
@@ -43,45 +60,6 @@ export default {
     min-height: 100%;
     padding: 0;
     margin: 0;
-    background-color: #f8f9f9;
     overflow-x: hidden;
-  }
-
-  body {
-    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen-Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  }
-
-  .text-left {
-    text-align: left;
-  }
-
-  .text-center {
-    text-align: center;
-  }
-
-  .text-right {
-    text-align: right;
-  }
-
-  .text-medium {
-    font-weight: 500;
-  }
-
-  .text-white {
-    color: #ffffff;
-  }
-
-  .no-margin {
-    margin: 0;
-  }
-
-  .footer-main,
-  .header-main {
-    background: white;
-    padding: 1rem 0;
-  }
-
-  .header-main {
-    margin-bottom: 20px;
   }
 </style>

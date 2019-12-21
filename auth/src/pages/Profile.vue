@@ -1,13 +1,13 @@
 // Index.vue
 <template>
   <div class="container">
-    Home
+    Pagina profilo
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'ProfilePage',
 
   data() {
     return {
