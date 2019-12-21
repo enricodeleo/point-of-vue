@@ -44,6 +44,7 @@ export default {
     padding: 0;
     margin: 0;
     background-color: #f8f9f9;
+    overflow-x: hidden;
   }
 
   body {
@@ -83,5 +84,4 @@ export default {
   .header-main {
     margin-bottom: 20px;
   }
-
 </style>
