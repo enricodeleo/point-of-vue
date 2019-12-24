@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import router from '../router';
+
 Vue.use(Vuex);
 
 const user = {
@@ -14,7 +16,12 @@ const user = {
   },
   mutations: {
     updateUser: (state, data) => {
-      state = data;
+      state.id = data.id;
+      state.registeredAt = data.registeredAt;
+      state.avatar = data.avatar;
+      state.name = data.name;
+      state.email = data.email;
+      state.accessToken = data.accessToken;
     },
     logout: (state) => {
       state.accessToken = null;
@@ -32,10 +39,13 @@ const user = {
       });
       const response = await rawResponse.json();
       commit('updateUser', response);
+      console.log(response);
+      router.push('/');
     },
 
     doLogout({ commit }) {
       commit('logout');
+      router.push('/');
     }
   },
   getters: {},

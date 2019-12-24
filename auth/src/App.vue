@@ -19,23 +19,13 @@
               Profile
             </router-link>
           </div>
-
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <router-link :to="{ name: 'index' }" class="button is-light">
-                  Log in
-                </router-link>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </nav>
-    <div class="container">
-      <!-- component matched by the route will render here -->
-      <router-view></router-view>
-    </div>
+
+    <!-- component matched by the route will render here -->
+    <router-view></router-view>
+
     <footer class="footer">
       <div class="content has-text-centered">
         <p>&copy; Copyleft {{ new Date().toLocaleString('it-IT', { year: 'numeric' }) }} Point of Vue</p>
@@ -55,11 +45,6 @@ export default {
 
   html,
   body {
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    padding: 0;
-    margin: 0;
     overflow-x: hidden;
   }
 </style>
