@@ -38,9 +38,14 @@ const user = {
         body: JSON.stringify(loginData),
       });
       const response = await rawResponse.json();
-      commit('updateUser', response);
-      console.log(response);
-      router.push('/');
+
+      // Check if response is okay, otherwise back to login
+      if (response && response.accessToken) {
+        await commit('updateUser', response);
+        router.push('/profile');
+      } else {
+        router.push('/login');
+      }
     },
 
     doLogout({ commit }) {

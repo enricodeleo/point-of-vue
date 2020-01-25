@@ -33,10 +33,10 @@ const router = new VueRouter({
  * Redirect to login if the user is not authenticated
  */
 router.beforeEach((to, from, next) => {
-  if (store.state.accessToken || to.name === 'login' ) {
-    next();
+  if (store.state.user.accessToken || to.name === 'login') {
+    return next();
   }
-  next('/login');
+  return next('/login');
 });
 
 Vue.use(VueRouter);
