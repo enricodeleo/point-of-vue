@@ -15,7 +15,7 @@
           <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
-                <img :src="avatar" alt="Placeholder image">
+                <img :src="avatar" alt="Avatar">
               </figure>
             </div>
             <div class="media-content">
